@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>What is your favorite movie?</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <div class="container">
@@ -13,8 +16,10 @@
         </div>
       </nav>
       <br>
-      <form action = "https://recmovie-api.herokuapp.com/movie" method = "POST">
+      <form action = "http://127.0.0.1:5000/movie" method = "POST">
          <!-- <p><input type = "submit" value = "submit" /></p> -->
+         <!-- http://127.0.0.1:5000/movie -->
+         <!-- https://recmovie-api.herokuapp.com/movie -->
          <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"><h4>Movie Recommendation System.</h4> <br>The model uses <b>Content Based Recommendations</b> to find similar movies.</br></label>
           <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type = "text" name = "title" placeholder="Enter a full movie name">
@@ -22,6 +27,18 @@
         </div>
         <button type="submit" class="btn btn-primary" value="submit">Submit</button>
       </form>
+
+      <script>
+        $( function() {
+        var movie_titles = [
+            {% for movie in movie_list %}
+                "{{movie}}",
+            {% endfor %}
+        ];
+        $( "#exampleInputEmail1" ).autocomplete({ source: movie_titles });
+        });
+      </script>
+
     </div>
   </body>
 </html>
