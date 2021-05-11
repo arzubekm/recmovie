@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
@@ -21,46 +22,58 @@
 
       .navbar h1 {
         color: #f1356d;
+        /* border-bottom: 1px solid #f2f2f2; */
       }
 
       .navbar .links {
         margin-left: auto;
       }
-      .navbar a {
-        margin-left: 8px;
-        text-decoration: none;
-        padding: 6px;
-        color:#8141f5;
-        font-weight: bolder;
-        font-size: 30px;
+
+      .left {
+         background-color:#D3D3D3;
       }
-      .navbar a:hover {
-        color: #f1356d;
+      .middle {
+         background-color:#ffffff;
+      }
+      .right{
+         background-color:#D3D3D3;
       }
 
     </style>
 
-    <div class="container">
-      <nav class="navbar navbar-light" style="border-bottom: 1px solid #f2f2f2;">
-        <div class="container-fluid">
-          <a href="{{ url_for('homepage') }}"><span class="navbar-brand mb-0 h1">movierec</span></a>
-          <div class="links">
 
-          </div>
+    <nav class="navbar navbar-light" style=" background-color: #f5c618;">
+      <div class="container">
+        <a href="{{ url_for('homepage') }}" style="text-decoration: none;"><span class="navbar-brand mb-0 h1" style="color:#000100; font-weight: bolder; font-size: 28px;">movierec</span></a>
+        <div class="links">
+          <a href="https://github.com/arzubekm" target="_blank">
+            <i class="fa fa-github" style="font-size:34px; color:#000100;"></i>
+          </a>
         </div>
-      </nav>
-      <br>
-      <form action = "http://127.0.0.1:5000/movie" method = "POST">
-         <!-- <p><input type = "submit" value = "submit" /></p> -->
-         <!-- http://127.0.0.1:5000/movie -->
-         <!-- https://recmovie-api.herokuapp.com/movie -->
-         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"><h4>Movie Recommendation System.</h4> <br>The model uses <b>Content Based Recommendations</b> to find similar movies.</br></label>
-          <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type = "text" name = "title" placeholder="Enter a full movie name">
-          <div id="emailHelp" class="form-text"></div>
+      </div>
+    </nav>
+
+    <!-- <div class="container"> -->
+
+      <div class="row">
+        <div class="col-sm-2 left"></div>
+        <div class="col-sm-8 middle">
+
+          <br>
+          <form action = "http://127.0.0.1:5000/movie" method = "POST">
+             <!-- <p><input type = "submit" value = "submit" /></p> -->
+             <!-- http://127.0.0.1:5000/movie -->
+             <!-- https://recmovie-api.herokuapp.com/movie -->
+             <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"><h4>Movie Recommendation System.</h4> <br>The model uses <b>Content Based Recommendations</b> to find similar movies.</br></label>
+              <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type = "text" name = "title" placeholder="Enter a full movie name">
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+          </form>
+
         </div>
-        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
-      </form>
+        <div class="col-sm-2 right"></div>
 
       <script>
         $( function() {
