@@ -4,14 +4,53 @@
     <meta charset="utf-8">
     <title>Movie Recommendation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Movierec</span>
+
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+      /* base styles */
+      * {
+        margin: 0;
+        font-family: "Quicksand";
+        color: #333;
+      }
+
+      .navbar h1 {
+        color: #f1356d;
+        /* border-bottom: 1px solid #f2f2f2; */
+      }
+
+      .navbar .links {
+        margin-left: auto;
+      }
+
+      .left {
+         background-color:#D3D3D3;
+      }
+      .middle {
+         background-color:#ffffff;
+      }
+      .right{
+         background-color:#D3D3D3;
+      }
+
+    </style>
+
+
+    <nav class="navbar navbar-light" style="background-color: #f5c618;">
+      <div class="container">
+        <a href="{{ url_for('homepage') }}" style="text-decoration: none;"><span class="navbar-brand mb-0 h1" style="color:#000100; font-weight: bolder; font-size: 28px;">movierec</span></a>
+        <div class="links">
+          <a href="https://github.com/arzubekm" target="_blank">
+            <i class="fa fa-github" style="font-size:34px; color:#000100;"></i>
+          </a>
         </div>
-      </nav>
+      </div>
+    </nav>
+
+    <div class="container">
       <br>
       <table class="table table-striped table-hover">
         <thead>

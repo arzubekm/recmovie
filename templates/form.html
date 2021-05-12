@@ -42,7 +42,7 @@
     </style>
 
 
-    <nav class="navbar navbar-light" style=" background-color: #f5c618;">
+    <nav class="navbar navbar-light" style="background-color: #f5c618;">
       <div class="container">
         <a href="{{ url_for('homepage') }}" style="text-decoration: none;"><span class="navbar-brand mb-0 h1" style="color:#000100; font-weight: bolder; font-size: 28px;">movierec</span></a>
         <div class="links">
@@ -55,9 +55,9 @@
 
     <!-- <div class="container"> -->
 
-      <div class="row">
-        <div class="col-sm-2 left"></div>
-        <div class="col-sm-8 middle">
+      <div class="container">
+        <div class="col-sm-2 left" style="background-color: #F8F8F8;"></div>
+        <div class="col-sm-9 middle">
 
           <br>
           <form action = "http://127.0.0.1:5000/movie" method = "POST">
@@ -69,11 +69,11 @@
               <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type = "text" name = "title" placeholder="Enter a full movie name">
               <div id="emailHelp" class="form-text"></div>
             </div>
-            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" value="submit" style="background-color: #f5c618; color: #000100; font-weight: bolder; border: 0px;">Submit</button>
           </form>
 
         </div>
-        <div class="col-sm-2 right"></div>
+        <div class="col-sm-1 right"></div>
 
       <script>
         $( function() {
