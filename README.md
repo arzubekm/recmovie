@@ -1,5 +1,5 @@
 # movierec
-Movie Recommendation system (movierec) project is build using [Flask](http://flask.pocoo.org/). It is a simple movie recommendations application that will show similar movies to your input.
+Movie Recommendation system (movierec) project is build using [Flask](http://flask.pocoo.org/). It is a simple movie recommendation application that will show similar movies to your input.
 
 The application model uses **Content Based Recommendations** to find similar movies based on [Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata) dataset.
 
